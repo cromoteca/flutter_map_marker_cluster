@@ -574,7 +574,9 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
       // GestureDetector gets triggered per gesture (usually the child one) and
       // therefore this _onClusterTap() function never gets called.
       if (widget.options.onClusterTap != null) {
-        widget.options.onClusterTap(cluster);
+        if (!widget.options.onClusterTap(cluster)) {
+          return null;
+        }
       }
 
       // check if children can un-cluster

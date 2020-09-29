@@ -112,8 +112,8 @@ class MarkerClusterLayerOptions extends LayerOptions {
   /// Function to call when markers are clustered
   final void Function(List<Marker>) onMarkersClustered;
 
-  /// Function to call when a cluster Marker is tapped
-  final void Function(MarkerClusterNode) onClusterTap;
+  /// Function to call when a cluster Marker is tapped (return false to prevent default behaviour)
+  final bool Function(MarkerClusterNode) onClusterTap;
 
   /// Popup's options that show when tapping markers or via the PopupController.
   final PopupOptions popupOptions;
